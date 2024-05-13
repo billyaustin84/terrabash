@@ -1,7 +1,7 @@
 FROM alpine:latest
 
-ARG PRODUCT
-ARG VERSION
+ARG PRODUCT=terraform
+ARG VERSION=1.8.3
 
 RUN apk add --update --virtual .deps --no-cache gnupg && \
     cd /tmp && \
