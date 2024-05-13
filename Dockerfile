@@ -1,5 +1,8 @@
 FROM alpine:latest
 
+# checkov:skip=CKV_DOCKER_3:No user required for this image
+# checkov:skip=CKV_DOCKER_7:We want to use the latest alpine image for this image
+
 ARG PRODUCT=terraform
 ARG VERSION=1.8.3
 
@@ -15,5 +18,7 @@ RUN apk add --update --virtual .deps --no-cache gnupg && \
     mv /tmp/${PRODUCT} /usr/local/bin/${PRODUCT} && \
     rm -f /tmp/${PRODUCT}_${VERSION}_linux_amd64.zip ${PRODUCT}_${VERSION}_SHA256SUMS ${VERSION}/${PRODUCT}_${VERSION}_SHA256SUMS.sig && \
     apk del .deps
+
+HEALTHCHECK NONE
 
 RUN apk add --no-cache bash git
