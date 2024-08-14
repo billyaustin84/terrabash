@@ -21,4 +21,4 @@ RUN apk add --update --virtual .deps --no-cache gnupg && \
 
 HEALTHCHECK NONE
 
-RUN apk add --no-cache bash git
+RUN apk add --no-cache bash git ansible-lint ansible jq
