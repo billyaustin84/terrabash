@@ -4,7 +4,7 @@ FROM alpine:latest
 # checkov:skip=CKV_DOCKER_7:We want to use the latest alpine image for this image
 
 ARG PRODUCT=terraform
-ARG VERSION=1.9.4
+ARG VERSION=1.10.1
 
 RUN apk add --update --virtual .deps --no-cache gnupg && \
     cd /tmp && \
